@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 20 16:07:54 2018
+
+@author: octavio.francisco.o1
+"""
+
+import math
+
+class Punto:
+    #Gato para comentar
+    def __init__(self,x=0,y=0):#Métodos Especiales
+        self.x= x  #Asigna nombres a los objetos instanciar objetos
+        self.y= y  #Asigna nombres a los objetos
+
+    def __str__(self):
+        return"(El punto{},El punto{})".format(self.x,self.y)
+#Definición de la función cuadrante (No olvidar el self)
+    def cuadrante(self): 
+        if self.x>0 and self.y >0:
+            print("{} este es el primer cuadrante".format(self))
+        elif self.x<0 and self.y>0:
+            print("{} este es el segundo cuadrante".format(self))
+        elif self.x<0 and self.y<0:
+            print("{} este es el tercer cuadrante".format(self))
+        elif self.x>0 and self.y<0:
+            print("{} este es el cuarto cuadrante".format(self))
+        else:
+            print("{}este es el origen".format(self))
+    def vector(self,p):
+        print("el vector entre {} y {} es({},{}".format(self,p,p.x-self.x,p.y-self.y))
+
+    def distancia(self,p):
+        d=math.sqrt((p.x-self.x)**2 + (p.y-self.y)**2)
+        print("La distancia entre los puntos {},{} es {}".format(self,p,d))
+
+class rectangulo:
+
+    def __init__(self,pIni=Punto(),pFin=Punto()):
+        self.pIni= pIni
+        self.pFin= pFin
+
+    def base(self):
+        self.base= abs(self.pFin.x - self.pIni.x)
+        print("El valor de la base es {}".format(self.base))
+
+    def altura(self):
+        self.altura= abs(self.pFin.y - self.pIni.y)
+        print("El valor de la altura es {}".format(self.altura))
+
+    def area(self):
+        self.area=(abs(self.pFin.x - self.pIni.x)*abs(self.pFin.y - self.pIni.y))
+        print("El área del rectangulo es {}".format(self.area))
+
